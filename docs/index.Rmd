@@ -1,7 +1,7 @@
 ---
-title: "Your A4 Report Title (TODO: Revise title)"
-author: "Your Name"
-date: '2022-11-01'
+title: "Incarceration Trends within the U.S."
+author: "Willis Liang"
+date: '2022-11-28'
 output: html_document
 ---
 
@@ -11,35 +11,51 @@ source("../source/analysis.R")
 ```
 
 ## Abstract 
-[TODO: Include a short abstract (about 50 words)]
-
-# Test (TODO: Remove before submission!!)
-```{r echo=FALSE}
-q1_string <- test_query1()
-num <- 5
-```
-As you know, this is a markdown report. The [R Markdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) is **useful!**
-
-* Here's a test of a dynamic variable. Say **"`r q1_string`!!!** 
-* Here's another test. A vector
-of numbers: `r test_query2(num)`.
-
-Recall that _{r echo=TRUE}_ can be used to display the code, 
-which is very useful when developing and debugging a report. Here's an example: 
-
-```{r echo=TRUE}
-num <- 5
-sum <- sum(test_query2(num))
-print(sum)
-```
+One of the United States' primary problems the past decades has been incarceration rates and trends. Recently there has been much data across regarding the proportions of white people incarcerated as well as people of color incarcerated. This report looks to highlight these trends and issues from data.
 
 ## Introduction 
-[TODO]
+As time has come to more recent, incarceration within America has become a larger and larger issue. With incarcerates rates and numbers on the rise with no sign of slowing down, the position of institutionalized racism has been raised as it has been observed that people of color have been incarcerated at a much higher rate than white people. Whether intentional or unintentional, racism has been a deeprooted foundation of our society possibly stemming from the Structual and Disciplinary domains of the Matrix of Domination. Systematically oppressive laws benefiting whites have been in place since the foundation of the U.S. Constitution which calls for change in today's age.
+
+The collected data from the Vera Institute displays numbers of people incarcerated by race and year which leads to the indirect stakeholders being the data points within the sets as they represent real people who's lives have been impacted and used to create visualizations to analyze general trends regarding those people. The direct stakeholders would be analyzers of the dataset. Through the analysis and wrangling of data and presenting trends, we can effectively show the underlying inequality of the incarceration system which should be taken to promote reform and change to better the fairness and justice of the system.
+
+Key Questions:
+
+1. How has the overall incarcerated population changed in the United States between 1970 and 2018?
+2. How has the black to white percentage of incarcerated citizens changed throughout that time period?
+3. How has the female to male percentage of incarcerated citizens changed throughout that time period?
 
 ## Data Summary 
-[TODO]
+My key of analysis is the difference between incarceration rates for people of color in America compared to white people in America. To perform this analysis I needed to find the percentages of incarcerated people of color to total people of color as well as the percentages of incarcerated white people to total white people. Additionally, I will compare high populations of inmates relative to overall population to see any rare cases.
 
-[TODO ... other sections ... See Canvas for details]
+## Section 3: Growth of the U.S. Prison Population
 
-_All the very best with your work!_
+```{r echo=FALSE, message=FALSE}
+plot_jail_pop_for_us()
+```
+**Jail Populations** From 1970 to 2018, the populations of jails in the U.S. has seen a dramatic increase.
+
+The above graph illustrates the drastic increase of incarcerated people across the time period of 1970-2018. An interesting possibility causing this trend could be seen in the sharp spike in the 1980's possibly resulting from President Reagan's war on drugs.
+
+## Section 4: Growth of the U.S. Prison Population by State
+
+```{r echo=FALSE, message=FALSE}
+plot_jail_pop_by_states(c("AL", "CA", "OR", "WA", "TX"))
+```
+**State Jail Populations** From 1970 to 2018, the populations of most state jails in the U.S. has only increased.
+
+The above graph illustrates the increases of populations of state jails from Alabama, California, Oregon, Washington, and Texas. 
+
+## Section 5: Genders of Jailed Populations
+```{r echo=FALSE, message=FALSE}
+plot_gender_jail_pop()
+```
+**Gender Jail Populations** In this visualizations we can see the proportion of male and female prison populations across the U.S.
+
+## Section 6: Comparisons Across Gender's of Jailed Populations
+```{r echo=FALSE, message=FALSE}
+plot_male_state_jail_pop()
+plot_female_state_jail_pop()
+```
+**Distribution of Jailed Gender Populations** In these visualizations we can see the distributions of male and female incarcerated populations by states. It is clearly seen that for the majority ratios of male to female inmates is actually quite relatively equal across the given states.
+
 
